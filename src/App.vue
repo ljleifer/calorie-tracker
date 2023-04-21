@@ -16,7 +16,7 @@ import CalorieTracker from './components/CalorieTracker.vue'
 export default {
   name: 'App',
   components: { CalorieTracker },
-  setup() {
+  beforeMount() {
     provideClient(new Client({
       url: 'https://balanced-weevil-66.hasura.app/v1/graphql',
       exchanges: [cacheExchange, fetchExchange],
@@ -27,7 +27,7 @@ export default {
           },
         };
       },
-    }))
+    }));
   },
 }
 </script>
