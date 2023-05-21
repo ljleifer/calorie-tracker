@@ -30,9 +30,29 @@ export default {
 <style scoped>
 table {
   border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.87);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+tbody {
+  overflow: auto;
 }
 th, td {
   border: 1px solid rgba(255, 255, 255, 0.87);
   padding: 15px;
+}
+th {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.87);
+}
+tr > :nth-child(1) {
+  width: 82px;
+}
+tr > :nth-child(2) {
+  width: 65px;
+}
+tr > :nth-child(3) {
+  width: 43px;
 }
 </style>

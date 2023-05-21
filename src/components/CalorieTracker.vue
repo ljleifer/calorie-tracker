@@ -80,12 +80,11 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.87);
   border-radius: 10px;
   cursor: pointer;
+  margin: 0px 20px;
   padding: 10px;
 }
 .navigation {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 50px;
+  justify-content: center;
 }
 </style>

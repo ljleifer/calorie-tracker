@@ -1,6 +1,8 @@
 <template>
   <h1>Calories per Day</h1>
-  <Bar id="calorie-bar-graph" :data="chartData" :options="chartOptions" />
+  <div class="canvas-container" style="aspect-ratio: 2 / 1">
+    <Bar id="calorie-bar-graph" :data="chartData" :options="chartOptions" />
+  </div>
 </template>
 
 <script>

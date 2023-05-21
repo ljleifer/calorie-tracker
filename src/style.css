@@ -41,6 +41,7 @@ body {
 }
 
 h1 {
+  align-self: center;
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -69,10 +70,19 @@ button:focus-visible {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  overflow: auto;
+  padding: 50px;
+  width: calc(100vw - 100px);
+}
+
+.canvas-container {
+  display: flex;
+  flex: 1;
+  max-width: 100%;
 }
 
 @media (prefers-color-scheme: light) {

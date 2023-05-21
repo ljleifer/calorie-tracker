@@ -1,6 +1,8 @@
 <template>
   <h1>Average Calories per Meal</h1>
-  <Pie id="calorie-pie-chart" :data="chartData" :options="chartOptions" />
+  <div class="canvas-container" style="aspect-ratio: 1 / 1">
+    <Pie id="calorie-pie-chart" :data="chartData" :options="chartOptions" />
+  </div>
 </template>
 
 <script>
