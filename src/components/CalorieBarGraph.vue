@@ -16,7 +16,7 @@ export default {
   name: 'CalorieBarGraph',
   components: { Bar },
   props: {
-    meals: { required: true, type: Array, default: {} }
+    meals: { required: true, type: Array },
   },
   data() {
     return {
