@@ -4,10 +4,13 @@
       <div :id="views.BAR_GRAPH" class="button" @click="setCurrentView(views.BAR_GRAPH)" :style="`background: rgb(54, 162, 235)`">Bar Graph</div>
       <div :id="views.PIE_CHART" class="button" @click="setCurrentView(views.PIE_CHART)">Pie Chart</div>
       <div :id="views.TABLE_DATA" class="button" @click="setCurrentView(views.TABLE_DATA)">Data Table</div>
+      <div :id="views.WORKBENCH" class="button" @click="setCurrentView(views.WORKBENCH)" v-if="enableWorkbench">Workbench</div>
     </div>
     <CalorieBarGraph v-if="isCurrentView(views.BAR_GRAPH)" :meals="queryData.meals" />
     <CaloriePieChart v-if="isCurrentView(views.PIE_CHART)" :meals="queryData.meals" />
     <CalorieTable v-if="isCurrentView(views.TABLE_DATA)" :meals="queryData.meals" />
+    <GenericTable v-if="isCurrentView(views.WORKBENCH)" :meals="queryData.meals" />
+    <!-- <Workbench v-if="isCurrentView(views.WORKBENCH)" /> -->
   </template>
   <h1 v-else-if="queryData === null">Fetching Meals...</h1>
   <h1 v-else>Error Fetching Meals</h1>
@@ -18,16 +21,22 @@ import { gql, useQuery } from '@urql/vue';
 import CalorieBarGraph from './CalorieBarGraph.vue';
 import CaloriePieChart from './CaloriePieChart.vue';
 import CalorieTable from './CalorieTable.vue';
+import GenericTable from './GenericTable.vue';
+import Workbench from './Workbench.vue';
 
 const VIEWS = Object.freeze({
   BAR_GRAPH: 0,
   PIE_CHART: 1,
   TABLE_DATA: 2,
+  WORKBENCH: 3,
 });
 
 export default {
   name: 'CalorieTracker',
-  components: { CalorieBarGraph, CaloriePieChart, CalorieTable },
+  components: { CalorieBarGraph, CaloriePieChart, CalorieTable, Workbench, GenericTable },
+  props: {
+    enableWorkbench: { required: false, type: Boolean, default: false },
+  },
   data() {
     return {
       currentView: VIEWS.BAR_GRAPH,

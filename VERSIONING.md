@@ -17,3 +17,6 @@ Table no longer overflows the page; data entries scroll and headings stay visibl
 
 # 1.1.2
 Implement SCSS, clean up styling.
+
+# 1.1.3
+Add dev workbench for debugging and playground use.
